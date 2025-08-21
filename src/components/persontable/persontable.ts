@@ -9,7 +9,7 @@ import { PersonWithCar } from "../../const/personWithCar.const";
 })
 export class Persontable {
   // Takes the peopletable from the parent and outputs the remove event
-  @Input() peopleTable!: any;
+  @Input() peopleTable!: PersonWithCar[];
   @Output() onRemove = new EventEmitter<PersonWithCar>();
 
   // Simple remove function emit lmao

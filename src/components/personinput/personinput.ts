@@ -1,11 +1,5 @@
 import { CommonModule } from "@angular/common";
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ɵɵpureFunction0,
-} from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import type { Car } from "../../const/car";
 import type { Person } from "../../const/person";

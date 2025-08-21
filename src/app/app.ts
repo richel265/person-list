@@ -34,15 +34,7 @@ export class App {
   peopleTable: PersonWithCar[] = [];
 
   inputHandler(personInput: PersonWithCar) {
-    // Set the person associated with the input
-    var person = this.people.indexOf(
-      new Person(personInput.name, personInput.age),
-    );
-
-    // Set the car associated with the input
-    var car = this.cars.indexOf(new Car(personInput.brand, personInput.model));
-
-    // Add it to the peopleTable
+    // Add the input to the peopleTable
     this.peopleTable.push(personInput);
   }
 
