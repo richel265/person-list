@@ -1,3 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // We're using pico CSS for ts
 @use "../node_modules/@picocss/pico/scss/pico";
+
+body {
+  padding: 8px;
+}
