@@ -1,0 +1,34 @@
+<article>
+  <header>
+    <h3>List of people</h3>
+  </header>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Car model</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (person of peopleTable; track person) {
+      <tr>
+        <th scope="row">{{person.name}}</th>
+        <td>{{person.age}}</td>
+        <td>{{person.model}}</td>
+        <td><button (click)="remove(person)">Remove</button></td>
+      </tr>
+      } @empty {
+      <tr disabled="disabled">
+        <th scope="row" disabled="disabled">Add a person...</th>
+        <td>999</td>
+        <td>No car</td>
+        <td>
+          <button disabled="disabled">Useless, please add a person</button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</article>

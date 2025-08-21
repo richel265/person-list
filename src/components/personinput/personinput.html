@@ -1,0 +1,24 @@
+<article>
+  <header>
+    <h3>Select a person and their car</h3>
+  </header>
+  <div id="selection">
+    <select name="Person" id="" [(ngModel)]="selectedPerson">
+      <option value="">-- Choose a person --</option>
+      @for (person of people; track person) {
+      <option value="{{person.name}}|{{person.age}}">
+        {{ person.name }} -- {{person.age}}yo
+      </option>
+      }
+    </select>
+    <select name="Car" id="" [(ngModel)]="selectedCar">
+      <option value="">-- Choose their car --</option>
+      @for (car of cars; track car) {
+      <option value="{{car.brand}}|{{car.model}}">
+        {{car.brand}} {{car.model}}
+      </option>
+      }
+    </select>
+    <button (click)="selectWrapper()">Add</button>
+  </div>
+</article>
