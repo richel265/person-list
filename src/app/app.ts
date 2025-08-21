@@ -16,7 +16,7 @@ export class App {
 
   // Create an array of preset people
   people: Person[] = [
-    new Person("Richel", 12),
+    new Person("Martin", 23),
     new Person("El Gringo", 47),
     new Person("Skibidi Mark", 3),
     new Person("Him.", -1),
