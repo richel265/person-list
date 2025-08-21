@@ -4,10 +4,12 @@ import { Car } from "../const/car";
 import { Personinput } from "../components/personinput/personinput";
 import { Persontable } from "../components/persontable/persontable";
 import { PersonWithCar } from "../const/personWithCar.const";
+import { Header } from "../components/header/header";
+import { Footer } from "../components/footer/footer";
 
 @Component({
   selector: "app-root",
-  imports: [Personinput, Persontable],
+  imports: [Personinput, Persontable, Header, Footer],
   templateUrl: "./app.html",
   styleUrl: "./app.scss",
 })
