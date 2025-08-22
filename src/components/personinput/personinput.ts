@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import type { Car } from "../../const/car";
 import type { Person } from "../../const/person";
-import { PersonWithCar } from "../../const/personWithCar.const";
+import type { PersonWithCar } from "../../const/personWithCar.const";
 
 @Component({
   selector: "app-personinput",
@@ -28,7 +28,7 @@ export class Personinput {
   @Input() cars!: Car[];
 
   // The splice functions splice the values from the select to be able to identify the PersonWithCar
-  splicePeople(personString: string): any[] {
+  splicePeople(personString: string): unknown[] {
     return personString.split("|");
   }
 
