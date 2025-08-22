@@ -57,6 +57,7 @@ export class App {
   onRemove(personToRemove: PersonWithCar) {
     // Deletes a person from the peopleTable when the Remove button is clicked on
     this.peopleTable.splice(this.peopleTable.indexOf(personToRemove), 1);
+    this.uniquePersonTable.delete(this.peopleKey(personToRemove));
   }
 
   ngOnInit() {
