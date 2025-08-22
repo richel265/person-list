@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import type { Car } from "../../const/car";
 import type { Person } from "../../const/person";
+import { PersonWithCar } from "../../const/personWithCar.const";
 
 @Component({
   selector: "app-personinput",
@@ -22,7 +23,7 @@ export class Personinput {
   splicedModel: string = "";
 
   // We output a submit event and we take in the people and the cars array
-  @Output() submitPerson = new EventEmitter<any>();
+  @Output() submitPerson = new EventEmitter<PersonWithCar>();
   @Input() people!: Person[];
   @Input() cars!: Car[];
 
