@@ -34,19 +34,23 @@ export class App {
   ];
 
   peopleTable: PersonWithCar[] = [];
+  uniquePersonTable = new Set<string>();
 
-  inputHandler(personInput: PersonWithCar): void {
-    // Reject doubles
-    if (
-      this.peopleTable.find(
-        (pwc: PersonWithCar) =>
-          pwc.name === personInput.name && pwc.brand === personInput.brand,
-      )
-    ) {
+  peopleKey(o: PersonWithCar): string {
+    return `${o.name}|${o.age}|${o.brand}|${o.model}`;
+  }
+
+  inputHandler(personInput: PersonWithCar) {
+    // Set an object key of our object
+    const inputkey = this.peopleKey(personInput);
+
+    // Check if it is in the unique set
+    if (this.uniquePersonTable.has(inputkey)) {
       return;
     }
 
-    // Add the input to the peopleTable
+    // Add the input to the peopleTable and the Set
+    this.uniquePersonTable.add(inputkey);
     this.peopleTable.push(personInput);
   }
 
@@ -64,8 +68,8 @@ export class App {
     const runs = 3;
 
     for (let i = 0; i < runs; i++) {
-      // Add a random user with mix-and-match values
-      this.peopleTable.push({
+      // Add a random user
+      this.inputHandler({
         name: this.people[person].name,
         age: this.people[person].age,
         brand: this.cars[car].brand,
