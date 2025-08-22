@@ -35,7 +35,17 @@ export class App {
 
   peopleTable: PersonWithCar[] = [];
 
-  inputHandler(personInput: PersonWithCar) {
+  inputHandler(personInput: PersonWithCar): void {
+    // Reject doubles
+    if (
+      this.peopleTable.find(
+        (pwc: PersonWithCar) =>
+          pwc.name === personInput.name && pwc.brand === personInput.brand,
+      )
+    ) {
+      return;
+    }
+
     // Add the input to the peopleTable
     this.peopleTable.push(personInput);
   }
